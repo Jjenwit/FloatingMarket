@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
+    <ion-title style="text-align: center">
+      <h1>Account</h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content *ngIf="account != null">
+  <ion-card>
+    <ion-list>
+      <ion-avatar class="center">
+        <img src={{image}}>
+      </ion-avatar>
+      <br>
+      <ion-item>
+        <ion-label>
+          <h2>Username: {{ username }}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>Name: {{ firstname }} {{ surname }}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>Phone: {{ phone }}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>Vouchers: </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngFor="let voucher of vouchers">
+        <ion-label>
+          <h2 style="text-align: center;">{{ voucher["code"] }}
+          <span style="float: right;">฿{{ voucher["value"] }}</span></h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  
+    <ion-item>
+      <a routerLink="/login" slot="end">
+        <ion-button color="primary" (click)="signOut()">
+          SIGN OUT
+        </ion-button>
+      </a>
+    </ion-item>
+  </ion-card>
 </ion-content>
+
+

@@ -1,3 +1,8 @@
+import { LoginService } from './login.service';
+import { BillingService } from './billing.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ShoppingCartService } from './shopping-cart.service';
+import { ItemStockService } from './item-stock.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -12,10 +17,14 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
+    ItemStockService, 
+    ShoppingCartService,
+    LoginService,
+    BillingService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

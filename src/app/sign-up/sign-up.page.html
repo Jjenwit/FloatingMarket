@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label>Username:</ion-label>
+          <ion-input clearInput required [(ngModel)]="username" name="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password:</ion-label>
+          <ion-input clearInput type="password" required [(ngModel)]="password" name="username"></ion-input>
+        </ion-item>  
+        <ion-item>
+          <ion-label>First Name:</ion-label>
+          <ion-input clearInput required [(ngModel)]="firstname" name="firstname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Surname:</ion-label>
+          <ion-input clearInput required [(ngModel)]="surname" name="surname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Phone Number:</ion-label>
+          <ion-input clearInput required [(ngModel)]="phone" name="phone"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <ion-button color="primary" (click)="signUp()" style="float: right">
+        CREATE
+      </ion-button>
+      <br>
+      <br>
+      <ion-buttons>
+        <a routerLink="/login">
+          <ion-button color="light">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </a>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

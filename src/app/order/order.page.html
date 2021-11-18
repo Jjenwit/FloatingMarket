@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          <h2>Billing Address</h2>
+        </ion-list-header>
+        <ion-item style="font-size: smaller;">
+          Name: {{ name }}
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          <ion-textarea value="Address: {{ address }}" readonly autoGrow>
+          </ion-textarea>
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          Phone: {{ phone }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          <h2>Payment Details</h2>
+        </ion-list-header>
+        <ion-item style="font-size: smaller;">
+          Total Price: <span slot="end">฿{{ noVAT | number:'1.0-2' }}</span>
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          VAT 7%: <span slot="end">฿{{ VAT | number:'1.0-2' }}</span>
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          Shipping Cost: <span slot="end">฿{{ shippingCost | number:'1.0-2' }}</span>
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          <ion-input placeholder="Voucher Code" [(ngModel)]="voucherCode" (ionChange)="onChange()"></ion-input>
+          <span slot="end">-฿{{ voucherValue | number:'1.0-2' }}</span>
+        </ion-item>
+        <ion-item style="font-size: smaller;">
+          Net Price: <span slot="end">฿{{ netPrice | number:'1.0-2' }}</span>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-buttons slot="start">
+        <a routerLink="/billing">
+          <ion-button color="light" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </a>
+      </ion-buttons>
+      <a routerLink="/congratulations" slot="end">
+        <ion-button color="primary">
+          ORDER
+        </ion-button>
+      </a>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

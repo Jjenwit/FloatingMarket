@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Billing Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label position="stacked">Name:</ion-label>
+          <ion-input clearInput required [(ngModel)]="name" name="name"></ion-input>
+        </ion-item>
+        <ion-item style="height: fit-content;">
+          <ion-label position="stacked">Address:</ion-label>
+          <ion-textarea clearInput required autoGrow [(ngModel)]="address" name="address"></ion-textarea>
+        </ion-item>  
+        <ion-item>
+          <ion-label position="stacked">Phone Number:</ion-label>
+          <ion-input clearInput required [(ngModel)]="phone" name="phone"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <ion-item>
+        <ion-buttons slot="start">
+          <a routerLink="/tabs/tab1">
+            <ion-button color="light">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </a>
+        </ion-buttons>
+        <a routerLink="/order" slot="end"> 
+          <ion-button color="primary" (click)="onNext()">
+            NEXT
+          </ion-button>
+        </a>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

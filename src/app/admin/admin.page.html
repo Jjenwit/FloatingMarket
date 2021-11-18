@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form class="form-card">
+      <ion-label color="light" for="itemName">Item Name</ion-label>
+      <ion-input
+      [(ngModel)]="itemName"
+      name="itemName" 
+      id="itemName" 
+      type="text" 
+      class="input-card" 
+      required 
+      autocapitalize
+      ></ion-input>
+      <ion-label  color="light" for="category">Category</ion-label>
+      <ion-input 
+      [(ngModel)]="category" 
+      name="category" 
+      id="category" 
+      type="text" 
+      class="input-card" 
+      required 
+      autocapitalize
+      ></ion-input>
+      <ion-label  color="light" for="price">Price</ion-label>
+      <ion-input 
+      [(ngModel)]="price" 
+      name="price" 
+      id="price" 
+      type="text" 
+      class="input-card" 
+      required
+      ></ion-input>
+      <ion-label  color="light" for="imageAddress">Image Address</ion-label>
+      <ion-input 
+      [(ngModel)]="imageAddress" 
+      name="imageAddress" 
+      id="imageAddress" 
+      type="text" 
+      class="input-card" 
+      required
+      ></ion-input>
+    </form>
+    <ion-button size="small" class="form-button" color="primary" (click)="addItem()">
+      Add Item
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+    <a routerLink="/login">
+      <ion-button size="small" class="form-button" color="primary">
+        Back
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </a>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="end">
+      <a routerLink="/admin">
+        <ion-button color="light">
+          ADMIN
+        </ion-button>
+      </a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label>Username:</ion-label>
+          <ion-input clearInput required [(ngModel)]="username" name="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password:</ion-label>
+          <ion-input clearInput required type="password" [(ngModel)]="password" name="username"></ion-input>
+        </ion-item>    
+      </form>
+      <br>
+      <ion-button color="primary" (click)="login()" style="float: right">
+        LOGIN
+      </ion-button>
+      <a routerLink="/sign-up">
+        <ion-button color="primary" style="float: right">
+          SIGN UP
+        </ion-button>
+      </a>
+      <br>
+      <br>
+      <ion-buttons>
+        <a routerLink="/tabs/tab2">
+          <ion-button color="light">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </a>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

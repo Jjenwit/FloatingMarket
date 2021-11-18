@@ -1,17 +1,56 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
+    <ion-title style="text-align: center">
+      <h1>Market
+        <ion-icon name="boat" size="large"></ion-icon>
+      </h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-searchbar 
+  style="color: #375e89;"
+  showCancelButton="focus" 
+  animated 
+  placeholder="Search Items" 
+  inputmode="search" 
+  [(ngModel)]="searchInput"
+  (ionChange)="searchItems()"
+  ></ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col size=6>
+        <div *ngFor="let item of searchedItemList">
+          <ion-card *ngIf="searchedItemList.indexOf(item) % 2 == 0">
+            <img src = {{item.image_address}}>
+            <ion-card-header class="card-header">
+              <ion-card-title class='card-title'>{{ item['item_name'] }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class='price'>
+              ฿{{ item['price'] }}
+            </ion-card-content>
+            <br>
+            <item-counter [item]="item"></item-counter>
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col size=6>
+        <div *ngFor="let item of searchedItemList"> 
+          <ion-card *ngIf="searchedItemList.indexOf(item) % 2 != 0">
+            <img src = {{item.image_address}}>
+            <ion-card-header class="card-header">
+                <ion-card-title class='card-title'>{{ item['item_name'] }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class='price'>
+                ฿{{ item['price'] }}
+            </ion-card-content>
+            <br>
+            <item-counter [item]="item"></item-counter>
+          </ion-card> 
+        </div>       
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

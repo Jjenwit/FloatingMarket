@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  cartIcon = 'cart-outline';
+  storeIcon = 'storefront-outline';
+  accountIcon = 'person-circle-outline';
 
+  constructor() { }
 }

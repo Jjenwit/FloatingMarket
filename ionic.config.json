@@ -1,5 +1,7 @@
 {
   "name": "FloatingMarket",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
